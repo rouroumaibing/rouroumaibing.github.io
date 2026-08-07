@@ -21,8 +21,8 @@ importers:
         specifier: ^4.0.0
         version: 4.0.0
       hexo-generator-json-content:
-        specifier: 2.2.0
-        version: 2.2.0
+        specifier: 4.2.3
+        version: 4.2.3
       hexo-generator-searchdb:
         specifier: ^1.5.0
         version: 1.5.0(chokidar@3.6.0)
@@ -436,8 +436,8 @@ packages:
     resolution: {integrity: sha512-KeM7mOCKWINGFAk1E+CkjMMgqFIv8oaRbGxR7ipkQAp44o4aopkVftma4sdIplOq9WQEWfVYDUK5gEv9J3nzUg==}
     engines: {node: '>=18'}
 
-  hexo-generator-json-content@2.2.0:
-    resolution: {integrity: sha512-yqJS18jZUS6zN3FBtwssm3EpAqx66NFghba5meBfcwWeMAcfyDlukirVInKrcW0xpx8KpT6NZXzXjPuZ9VL1rg==}
+  hexo-generator-json-content@4.2.3:
+    resolution: {integrity: sha512-XGqCaTUr6+X8Ty/YvRi+0eh0DJgHcp+lgBhn+Sgyh6ev40P0cwamwJyaZroTdHt8GPoBwbSGVu0H/CdzEf0lFA==}
 
   hexo-generator-searchdb@1.5.0:
     resolution: {integrity: sha512-d0b5SueDxJimTFaHpPg430FQFx7DtMkmEIHo0UTOjXWRy+eDqNSp1CuS04P7fWzMnH2h+aQc6O9D2yY+3sdAUg==}
@@ -999,8 +999,8 @@ packages:
     resolution: {integrity: sha512-1lfMEm2IEr7RIV+f4lUNPOqfFL+pO+Xw3fJSqmjX9AbXcXcYOkCe1P6+9VBZB6n94af16NfZf+sSk0JCBZC9aw==}
     engines: {node: '>=18'}
 
-  which@2.0.1:
-    resolution: {integrity: sha512-N7GBZOTswtB9lkQBZA4+zAXrjEIWAUOB93AvzUiudRzRxhUdLURQ7D/gAIMY1gatT/LTbmbcv8SiYazy3eYB7w==}
+  which@2.0.2:
+    resolution: {integrity: sha512-BLI3Tl1TW3Pvl70l3yq3Y64i+awpwXqsGBYWkkqMtnbXgrMD+yj7rhW0kuEDxzJaYXGjEW5ogapKNMEKNMjibA==}
     engines: {node: '>= 8'}
     hasBin: true
 
@@ -1176,7 +1176,7 @@ snapshots:
     dependencies:
       path-key: 3.1.1
       shebang-command: 2.0.0
-      which: 2.0.1
+      which: 2.0.2
 
   cssstyle@4.1.0:
     dependencies:
@@ -1216,7 +1216,7 @@ snapshots:
     dependencies:
       domelementtype: 2.3.0
       domhandler: 5.0.3
-      entities: 4.4.0
+      entities: 4.5.0
 
   domelementtype@2.3.0: {}
 
@@ -1423,10 +1423,11 @@ snapshots:
     dependencies:
       hexo-pagination: 3.0.0
 
-  hexo-generator-json-content@2.2.0:
+  hexo-generator-json-content@4.2.3:
     dependencies:
       hexo-util: 4.0.0
       keyword-extractor: 0.0.28
+      moment: 2.30.1
 
   hexo-generator-searchdb@1.5.0(chokidar@3.6.0):
     dependencies:
@@ -2050,7 +2051,7 @@ snapshots:
       tr46: 5.1.1
       webidl-conversions: 7.0.0
 
-  which@2.0.1:
+  which@2.0.2:
     dependencies:
       isexe: 2.0.0
 
