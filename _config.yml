@@ -92,7 +92,7 @@ pagination_dir: page
 include:
 exclude:
   - RULES.md
-  - TECHNICAL-DOCUMENT-REQUIREMENTS.md
+  - "templates/**"
 ignore:
 
 # Extensions
