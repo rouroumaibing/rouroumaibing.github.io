@@ -47,9 +47,33 @@ fonts:
   enable: true                          # set to false to disable Google Fonts (e.g. China mainland)
 
 # 5. 语言与主题模式
+# ---------------------------------------------------------------
+# Multi-language (i18n) Configuration
+# ---------------------------------------------------------------
+# The theme provides UI string translations (languages/en.yml, languages/zh-CN.yml).
+# For full multi-language content switching, your Hexo site needs:
+#
+#   1. Install hexo-generator-i18n plugin:
+#        npm install hexo-generator-i18n
+#
+#   2. In your Hexo site's _config.yml, add:
+#        language: [zh-CN, en]
+#        i18n:
+#          type: [post, page]
+#          generator: [archive, category, tag, index]
+#
+#   3. Create translated content:
+#        source/_posts/          → Chinese articles (default)
+#        source/en/_posts/       → English articles
+#
+#   4. Set i18n.enable: true below
+#
+# If you only have one language, keep enable: false.
+# UI language is controlled by your Hexo site's config.language setting.
+# ---------------------------------------------------------------
 i18n:
-  enable: true
-  default_lang: "zh-CN"
+  enable: false # true: show language switcher (requires multi-language content)
+  default_lang: "zh-CN" # default language code
   languages:
     - code: "en"
       name: "English"

@@ -278,10 +278,74 @@ Inter（正文）和 JetBrains Mono（等宽）通过 Google Fonts 在 `head.ejs
 - **移动端抽屉** — 滑入式导航，子菜单手风琴折叠，背景滚动锁定，Esc 关闭
 - **文章目录** — 从标题自动提取，粘性侧边栏，无标题时自动回退全宽
 - **代码块** — 一键复制按钮、行号支持、暗色模式语法高亮
-- **国际化** — 内置中英文，可扩展
+- **国际化 (i18n)** — 内置中英文 UI 文案，支持多语言内容切换
 - **SEO** — Open Graph、Twitter Card、meta 标签、封面图自动提取
 - **数学公式** — MathJax 3 按需加载
 - **无障碍 (a11y)** — 跳转内容链接、ARIA 属性、键盘导航、焦点管理
+
+---
+
+## 多语言 (i18n) 配置
+
+主题通过 `languages/en.yml` 和 `languages/zh-CN.yml` 提供界面文案翻译（按钮、标签、组件标题）。默认 UI 语言由 Hexo 站点的 `config.language` 设置决定。
+
+### 方案 A：单语言（默认）
+
+无需额外配置。在 Hexo 站点的 `_config.yml` 中设置语言：
+
+```yaml
+# Hexo 站点 _config.yml
+language: zh-CN  # 或 "en"
+```
+
+主题自动使用对应的语言包。语言切换器默认隐藏（`i18n.enable: false`）。
+
+### 方案 B：多语言内容切换
+
+要实现完整的中英文内容切换：
+
+1. **安装 i18n 插件**（在 Hexo 站点目录）：
+
+   ```bash
+   npm install hexo-generator-i18n
+   ```
+
+2. **配置 Hexo 站点的 `_config.yml`**：
+
+   ```yaml
+   language: [zh-CN, en]
+   i18n:
+     type: [post, page]
+     generator: [archive, category, tag, index]
+   ```
+
+3. **创建翻译内容**：
+
+   ```
+   source/
+   ├── _posts/           # 默认语言（中文）文章
+   │   ├── hello-world.md
+   │   └── ...
+   └── en/
+       └── _posts/       # 英文文章
+           ├── hello-world.md
+           └── ...
+   ```
+
+4. **在主题 `_config.yml` 中启用语言切换器**：
+
+   ```yaml
+   i18n:
+     enable: true
+     default_lang: "zh-CN"
+     languages:
+       - code: "en"
+         name: "English"
+       - code: "zh-CN"
+         name: "中文"
+   ```
+
+启用后，导航栏会显示语言切换按钮，点击可切换到同一篇文章的其他语言版本。
 
 ---
 

@@ -278,10 +278,74 @@ The theme uses Tailwind's default color palette. Key colors:
 - **Mobile drawer** — slide-in nav with accordion submenus, scroll lock, Esc to close
 - **Article TOC** — auto-detected from headings, sticky sidebar, falls back to full-width when empty
 - **Code blocks** — copy button, line-number support, dark-mode syntax highlighting
-- **i18n** — English + Chinese out of the box, extensible
+- **i18n** — English + Chinese UI strings out of the box, multi-language content supported
 - **SEO** — Open Graph, Twitter Card, meta tags, cover image extraction
 - **Math** — MathJax 3 conditional loading
 - **a11y** — skip-to-content link, ARIA attributes, keyboard navigation, focus management
+
+---
+
+## Multi-Language (i18n) Setup
+
+The theme provides UI string translations (buttons, labels, widget titles) via `languages/en.yml` and `languages/zh-CN.yml`. By default, the UI language is controlled by your Hexo site's `config.language` setting.
+
+### Option A: Single Language (Default)
+
+No extra setup needed. Set your site's language in `_config.yml`:
+
+```yaml
+# Hexo site _config.yml
+language: zh-CN  # or "en"
+```
+
+The theme automatically uses the matching language file. The language switcher is hidden (`i18n.enable: false`).
+
+### Option B: Multi-Language Content Switching
+
+To enable full content switching between languages:
+
+1. **Install the i18n plugin** in your Hexo site:
+
+   ```bash
+   npm install hexo-generator-i18n
+   ```
+
+2. **Configure your Hexo site's `_config.yml`**:
+
+   ```yaml
+   language: [zh-CN, en]
+   i18n:
+     type: [post, page]
+     generator: [archive, category, tag, index]
+   ```
+
+3. **Create translated content**:
+
+   ```
+   source/
+   ├── _posts/           # Default language (zh-CN) articles
+   │   ├── hello-world.md
+   │   └── ...
+   └── en/
+       └── _posts/       # English articles
+           ├── hello-world.md
+           └── ...
+   ```
+
+4. **Enable the language switcher** in the theme's `_config.yml`:
+
+   ```yaml
+   i18n:
+     enable: true
+     default_lang: "zh-CN"
+     languages:
+       - code: "en"
+         name: "English"
+       - code: "zh-CN"
+         name: "中文"
+   ```
+
+Now the header shows a language switcher. Clicking it navigates to the same article in the other language.
 
 ---
 

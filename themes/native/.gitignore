@@ -1,3 +1,7 @@
 node_modules/
 source/css/style.css
 .package-lock.json
+
+# Test site build artifacts
+test-site/public/
+test-site/db.json
