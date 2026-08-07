@@ -1,0 +1,20 @@
+<% var blogTitle = theme.blog.title_key ? __(theme.blog.title_key) : (theme.blog.title || __('blog')); %>
+<% var blogSubtitle = theme.blog.subtitle || config.description || ''; %>
+<% var pageTitle = page.category ? page.category : (page.tag ? page.tag : (page.archive ? __('archives') : blogTitle)); %>
+<% var pageSubtitle = page.category ? __('category') + ': ' + page.category : (page.tag ? __('tag') + ': ' + page.tag : (page.archive ? __('archives') : blogSubtitle)); %>
+<%- partial('_partial/page-header', { title: pageTitle, subtitle: pageSubtitle, breadcrumbs: [{name: __('home'), url: '/'}, {name: pageTitle}] }) %>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-8">
+  <section class="lg:col-span-8 space-y-6">
+    <div class="divide-y divide-gray-200 dark:divide-gray-800">
+      <% if (page.posts && page.posts.length) { page.posts.forEach(function(post) { %>
+        <%- partial('_partial/post-card', { post: post }) %>
+      <% }); } else { %>
+        <p class="py-6 text-gray-500 dark:text-gray-400"><%= __('search_no_results') %></p>
+      <% } %>
+    </div>
+    <%- partial('_partial/pagination', {}) %>
+  </section>
+  <aside class="lg:col-span-4 space-y-8">
+    <%- partial('_partial/sidebar', {}) %>
+  </aside>
+</div>

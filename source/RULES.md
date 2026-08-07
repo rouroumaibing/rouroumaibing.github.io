@@ -17,32 +17,35 @@
 ### 文章文件名
 
 ```
-source/_posts/<日期>-<5位随机字符>-<英文文章标题>.md
+source/_posts/<分类路径>/<日期>-<5位随机字符>-<英文文章标题>.md
 ```
 
+- **分类路径**：与 front matter 中 `categories` 的层级一致，支持多级子目录（如 `cncf/kubernetes/`），用于本地文件管理（不影响线上 URL 和分类）
 - **日期**：`YYYYMMDD` 格式，如 `20260806`
 - **5位随机字符**：小写字母 `a-z`，排除易混淆字符 `l`、`o`，即从 `abcdefghijkmnpqrstuvwxyz` 中选取，用于关联文章与图片
 - **英文文章标题**：英文，用 `-` 连接单词，全小写
 
-示例：`20260806-hvggd-setup-blog-with-hexo-and-github-actions.md`
+示例：
+- 单层：`source/_posts/github/20260806-hvggd-setup-blog-with-hexo-and-github-actions.md`
+- 多层：`source/_posts/cncf/kubernetes/20260806-lidav-pod.md`
 
 ### 图片目录与文件名
 
 ```
-source/images/<日期>/<5位随机字符>-<图片描述>.<扩展名>
+source/images/<日期>/<5位随机字符>/<图片描述>.<扩展名>
 ```
 
 - **日期**：与文章日期一致，作为文件夹名分组
-- **5位随机字符**：与文章的随机字符一致，关联图片到文章
+- **5位随机字符**：与文章的随机字符一致，作为子文件夹关联图片到文章
 - **图片描述**：简短描述图片内容，英文，用 `-` 连接单词，全小写
 - **扩展名**：支持 `png`、`jpg`、`webp`、`gif`，推荐 `png`（截图）或 `webp`（照片）
 
-示例：`source/images/20260806/hvggd-github-page-setting.png`
+示例：`source/images/20260806/hvggd/github-page-setting.png`
 
 ### 文章中引用图片
 
 ```markdown
-![图片描述](/images/<日期>/<5位随机字符>-<图片描述>.<扩展名>)
+![图片描述](/images/<日期>/<5位随机字符>/<图片描述>.<扩展名>)
 ```
 
 - **alt 文字**：使用中文，简短描述图片内容
@@ -50,7 +53,7 @@ source/images/<日期>/<5位随机字符>-<图片描述>.<扩展名>
 示例：
 
 ```markdown
-![GitHub Pages 设置页面](/images/20260806/hvggd-github-page-setting.png)
+![GitHub Pages 设置页面](/images/20260806/hvggd/github-page-setting.png)
 ```
 
 ---

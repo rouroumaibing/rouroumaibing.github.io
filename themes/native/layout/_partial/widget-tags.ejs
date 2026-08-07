@@ -1,0 +1,9 @@
+<div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-5 shadow-sm">
+  <h3 class="text-base font-semibold text-gray-900 dark:text-white mb-4"><%= __('tags') %></h3>
+  <div class="flex flex-wrap gap-2">
+    <% site.tags.forEach(function(tag) { %>
+      <% var size = tag.posts.length > 15 ? 'text-lg' : (tag.posts.length > 5 ? 'text-base' : 'text-sm'); %>
+      <a href="<%- url_for(tag.path) %>" class="<%= size %> px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors"><%= tag.name %></a>
+    <% }); %>
+  </div>
+</div>

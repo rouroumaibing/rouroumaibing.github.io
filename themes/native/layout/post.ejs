@@ -1,0 +1,56 @@
+<% var breadcrumbs = [{name: __('home'), url: '/'}, {name: __('blog'), url: theme.blog.url || '/archives/'}, {name: page.title}]; %>
+<%- partial('_partial/page-header', { title: page.title, breadcrumbs: breadcrumbs }) %>
+
+<% var tocHtml = toc(page.content, { list_number: false }); %>
+<% var hasToc = (theme.post.toc || page.toc) && strip_html(tocHtml).trim().length > 0; %>
+
+<div class="grid grid-cols-1 <%= hasToc ? 'lg:grid-cols-12' : '' %> gap-8 max-w-7xl mx-auto mt-8">
+  <article class="<%= hasToc ? 'lg:col-span-9' : 'w-full' %> prose dark:prose-invert max-w-none">
+    <header>
+      <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 space-x-2 mb-4">
+        <time datetime="<%= date_xml(page.date) %>"><%= date(page.date, 'MMM D, YYYY') %></time>
+        <% var cat = page.categories && page.categories.length ? page.categories.first() : null; %>
+        <% if (cat) { %>
+          <span>•</span>
+          <a href="<%- url_for(cat.path) %>" class="text-blue-600 dark:text-blue-400 hover:underline font-medium"><%= cat.name %></a>
+        <% } %>
+        <% if (theme.blog && theme.blog.reading_time) { var wordCount = strip_html(page.content).length; var readingTime = Math.ceil(wordCount / 400); %>
+          <span>•</span>
+          <span><%= readingTime %> <%= __('min_read') %></span>
+        <% } %>
+      </div>
+    </header>
+    <%- page.content %>
+  </article>
+  <% if (hasToc) { %>
+  <aside class="hidden lg:block lg:col-span-3">
+    <%- partial('_partial/post-toc', { tocHtml: tocHtml }) %>
+  </aside>
+  <% } %>
+</div>
+
+<div class="max-w-7xl mx-auto">
+  <% if (page.tags && page.tags.length) { %>
+  <div class="flex flex-wrap gap-2 mt-8">
+    <% page.tags.data.forEach(function(tag) { %>
+      <a href="<%- url_for(tag.path) %>" class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-sm text-gray-600 dark:text-gray-400 hover:bg-blue-600 hover:text-white transition-colors"><%= tag.name %></a>
+    <% }); %>
+  </div>
+  <% } %>
+  <% if (page.prev || page.next) { %>
+  <nav class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
+    <% if (page.prev) { %>
+    <a href="<%- url_for(page.prev.path) %>" class="block p-4 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-blue-600 transition-colors">
+      <span class="text-xs text-gray-500">← <%= __('prev') %></span>
+      <span class="block font-semibold mt-1"><%= page.prev.title %></span>
+    </a>
+    <% } %>
+    <% if (page.next) { %>
+    <a href="<%- url_for(page.next.path) %>" class="block p-4 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-blue-600 transition-colors text-right">
+      <span class="text-xs text-gray-500"><%= __('next') %> →</span>
+      <span class="block font-semibold mt-1"><%= page.next.title %></span>
+    </a>
+    <% } %>
+  </nav>
+  <% } %>
+</div>

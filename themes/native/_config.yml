@@ -1,0 +1,109 @@
+# =========================================================
+# Hexo Theme Native Configuration
+# =========================================================
+# This is the theme-level config. Values here can be overridden
+# by the Hexo site's _config.yml. Text content uses i18n keys
+# defined in languages/*.yml — customize there, not here.
+
+# 1. 站点图标
+favicon: "/images/favicon.ico"
+
+# 1.1 默认封面图 (OG image 兜底)
+default_cover: "/images/default-cover.png"
+
+# 2. 顶部公告条
+announcement:
+  enable: false
+  text_key: "announcement_text"            # i18n key in languages/*.yml
+  link: "/about/"
+  link_text_key: "announcement_link_text"  # i18n key
+
+# 3. 导航栏与 Mega-Menu
+navbar:
+  logo: ""                                 # empty: hides logo image, shows text only
+  site_name: ""                            # empty: falls back to config.author or config.title
+  sticky: true
+  menu: []
+    # - title_key: "blog"                    # i18n key for menu title
+    #   url: "/archives/"
+    # - title_key: "categories"            # uncomment and customize as needed
+    #   url: "/categories/"
+    # - title: "Technology"                # use title for non-i18n names
+    #   type: "dropdown"
+    #   children:
+    #     - name: "AI Engineering"
+    #       desc: "LLM, AI Native Infra and Agentic AI."
+    #       url: "/categories/ai-engineering/"
+    #       icon: "cpu"
+
+# 4. 搜索配置
+search:
+  enable: true
+  shortcut: "⌘K"
+  path: "search.json"
+
+# 4.1 字体配置
+fonts:
+  enable: true                          # set to false to disable Google Fonts (e.g. China mainland)
+
+# 5. 语言与主题模式
+i18n:
+  enable: true
+  default_lang: "zh-CN"
+  languages:
+    - code: "en"
+      name: "English"
+    - code: "zh-CN"
+      name: "中文"
+
+theme_mode:
+  default: "system" # light, dark, system
+
+# 6. 文章列表页参数
+blog:
+  title_key: "blog"                        # i18n key
+  url: "/archives/"                        # blog list page URL
+  subtitle: ""                             # empty: falls back to config.description
+  per_page: 10
+  show_excerpt: true
+  excerpt_length: 160
+  reading_time: true
+
+# 7. 文章详情页参数
+post:
+  toc: false # 默认不显示目录，文章 front-matter 可覆盖
+
+# 8. 数学公式渲染
+math:
+  enable: false # 全局开关，文章 front-matter math: true 可覆盖
+  engine: "mathjax" # mathjax 或 katex
+
+# 9. 侧边栏配置
+sidebar:
+  widgets:
+    - categories
+    - recent
+    - tags
+
+# 10. 页脚多列配置
+# Text uses i18n keys (title_key / name_key) defined in languages/*.yml
+footer:
+  # columns:                              # uncomment to add footer link columns
+  #   - title_key: "footer_nav"
+  #     links:
+  #       - name_key: "footer_blog_posts"
+  #         url: "/archives/"
+
+  # social_qr:
+  #   - name: "LinkedIn"
+  #     qr_image: "/images/linkedin-qr.png"
+  #     link: "https://linkedin.com/in/yourname"
+
+  copyright_year: ""                       # empty: auto-calculated as current year
+  author: ""                               # empty: falls back to config.author or config.title
+  license: ""                               # empty: hides license link
+  license_url: ""
+
+  powered_by:
+    - name: "Hexo"
+      url: "https://hexo.io"

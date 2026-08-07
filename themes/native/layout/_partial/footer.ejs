@@ -1,0 +1,54 @@
+<footer class="bg-white dark:bg-gray-950 border-t border-gray-200 dark:border-gray-800 mt-auto">
+  <% var hasColumns = theme.footer.columns && theme.footer.columns.length; %>
+  <% var hasSocial = theme.footer.social_qr && theme.footer.social_qr.length; %>
+  <% if (hasColumns || hasSocial) { %>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-2 md:grid-cols-4 gap-8">
+    <% if (hasColumns) { theme.footer.columns.forEach(function(col) { %>
+      <div>
+        <h3 class="font-semibold text-sm text-gray-900 dark:text-white mb-4"><%= col.title_key ? __(col.title_key) : col.title %></h3>
+        <ul class="space-y-2">
+          <% col.links.forEach(function(link) { %>
+            <li>
+              <a href="<%- url_for(link.url) %>" class="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"><%= link.name_key ? __(link.name_key) : link.name %></a>
+            </li>
+          <% }); %>
+        </ul>
+      </div>
+    <% }); } %>
+
+    <% if (theme.footer.social_qr && theme.footer.social_qr.length) { %>
+      <div>
+        <h3 class="font-semibold text-sm text-gray-900 dark:text-white mb-4"><%= __('footer_contact') %></h3>
+        <ul class="space-y-4">
+          <% theme.footer.social_qr.forEach(function(item) { %>
+            <li class="flex items-center space-x-3">
+              <img src="<%- url_for(item.qr_image) %>" alt="<%= item.name %> QR Code" class="w-24 h-24">
+              <a href="<%= item.link %>" class="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"><%= item.name %></a>
+            </li>
+          <% }); %>
+        </ul>
+      </div>
+    <% } %>
+  </div>
+  <% } %>
+
+  <div class="border-t border-gray-200 dark:border-gray-800 py-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 text-sm text-gray-600 dark:text-gray-400">
+      <div>
+        <% var year = theme.footer.copyright_year || new Date().getFullYear().toString(); %>
+        &copy; <%= year %> <%= theme.footer.author || config.author || config.title %>. <%= __('all_rights_reserved') %>
+      </div>
+      <div class="flex items-center space-x-2">
+        <% if (theme.footer.license && theme.footer.license_url) { %>
+        <a href="<%= theme.footer.license_url %>" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"><%= theme.footer.license %></a>
+        <span class="text-gray-300 dark:text-gray-600">&middot;</span>
+        <% } %>
+        <span><%= __('powered_by') %></span>
+        <% if (theme.footer.powered_by && theme.footer.powered_by.length) { theme.footer.powered_by.forEach(function(item, idx) { %>
+          <% if (idx > 0) { %><span class="text-gray-300 dark:text-gray-600">&middot;</span><% } %>
+          <a href="<%= item.url %>" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"><%= item.name %></a>
+        <% }); } %>
+      </div>
+    </div>
+  </div>
+</footer>

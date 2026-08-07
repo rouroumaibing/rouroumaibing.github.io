@@ -1,0 +1,10 @@
+<% if (page.total > 1) { %>
+<nav class="flex items-center justify-between border-t border-gray-200 dark:border-gray-800 pt-6 mt-8">
+  <div class="flex items-center space-x-2">
+    <%- paginator({ prev_text: '← ' + __('prev'), next_text: __('next') + ' →', escape: false }) %>
+  </div>
+  <div class="text-sm text-gray-500 dark:text-gray-400 font-mono">
+    <%= __('total_posts', site.posts.length || 0) %>
+  </div>
+</nav>
+<% } %>

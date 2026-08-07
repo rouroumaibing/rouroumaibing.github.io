@@ -1,0 +1,5 @@
+<%- partial('_partial/page-header', { title: __('search'), breadcrumbs: [{name: __('home'), url: '/'}, {name: __('search')}] }) %>
+<div class="mt-8 max-w-2xl mx-auto">
+  <input type="text" id="page-search-input" placeholder="<%= __('search_placeholder') %>" class="w-full px-4 py-3 text-lg border border-gray-200 dark:border-gray-800 rounded-lg focus:ring-2 focus:ring-blue-600 focus:outline-none" autocomplete="off">
+  <div id="page-search-results" class="mt-4 space-y-4"></div>
+</div>

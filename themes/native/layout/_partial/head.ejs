@@ -1,0 +1,61 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="<%= page.description || config.description %>">
+<title><%= page.title ? page.title + ' | ' + config.title : config.title %></title>
+
+<% var ogImage = page.cover || page.thumbnail || (theme.default_cover ? url_for(theme.default_cover) : ''); %>
+<meta property="og:title" content="<%= page.title || config.title %>">
+<meta property="og:description" content="<%= page.description || config.description %>">
+<meta property="og:type" content="<%= page.layout === 'post' ? 'article' : 'website' %>">
+<meta property="og:url" content="<%= config.url %><%= url_for(page.path) %>">
+<% if (ogImage) { %>
+<meta property="og:image" content="<%= ogImage %>">
+<% } %>
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="<%= page.title || config.title %>">
+<meta name="twitter:description" content="<%= page.description || config.description %>">
+<% if (ogImage) { %>
+<meta name="twitter:image" content="<%= ogImage %>">
+<% } %>
+
+<% if (theme.favicon) { %>
+<link rel="icon" href="<%- url_for(theme.favicon) %>">
+<% } %>
+<link rel="stylesheet" href="<%- url_for('/css/style.css') %>">
+
+<% if (!theme.fonts || theme.fonts.enable !== false) { %>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<% } %>
+
+<% if (theme.math && theme.math.enable || page.math) { %>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/polyfill/3.111.1/polyfill.min.js"></script>
+<script id="MathJax-config">
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<% } %>
+
+<script>
+  (function() {
+    var theme = localStorage.getItem('theme') || '<%= theme.theme_mode && theme.theme_mode.default || "system" %>';
+    var isDark = theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    if (isDark) document.documentElement.classList.add('dark');
+  })();
+</script>
+
+<script>
+  window.NATIVE_CONFIG = {
+    searchPath: "<%- url_for(theme.search.path) %>",
+    root: "<%- config.root %>",
+    searchNoResults: "<%= __('search_no_results') %>",
+    themeDefault: "<%= theme.theme_mode && theme.theme_mode.default || 'system' %>",
+    defaultLang: "<%= theme.i18n && theme.i18n.default_lang || 'zh-CN' %>"
+  };
+</script>

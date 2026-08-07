@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* Pagination: 覆盖 Hexo paginator() 原生输出的 class */
+  .pagination .page-number, .pagination .extend {
+    @apply inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-medium transition-colors;
+  }
+  .pagination .page-number:hover, .pagination .extend:hover {
+    @apply bg-gray-100 dark:bg-gray-800;
+  }
+  .pagination .page-number.current {
+    @apply bg-blue-600 text-white;
+  }
+  /* 代码块：适配 Hexo 行号 table 结构 */
+  .highlight table { @apply w-full border-collapse; }
+  .highlight .gutter { @apply pr-4 text-gray-500 select-none text-right border-r border-gray-200 dark:border-gray-800; }
+  .highlight .code { @apply pl-4 w-full overflow-x-auto; }
+  .highlight pre { @apply p-4 overflow-x-auto; }
+  /* 确保 Hexo 代码块打破 prose 的默认 pre/code 样式干扰 */
+  .prose .highlight pre { @apply bg-transparent p-0 m-0 border-0 rounded-none; }
+  .prose .highlight code { @apply bg-transparent p-0 text-inherit font-normal; }
+  .prose .highlight code::before, .prose .highlight code::after { content: none; }
+}
+
+/* 代码高亮：适配 Hexo highlight/prismjs 输出的 class 结构 */
+/* Hexo 默认使用 highlight.js，生成 .highlight > pre > code > span.hljs-* */
+.highlight {
+  @apply bg-gray-900 text-gray-100 rounded-lg overflow-x-auto my-4;
+}
+.highlight pre {
+  @apply p-4 m-0;
+}
+.highlight .hljs-comment { @apply text-gray-500; }
+.highlight .hljs-keyword { @apply text-blue-400; }
+.highlight .hljs-string { @apply text-green-400; }
+.highlight .hljs-number { @apply text-orange-400; }
+.highlight .hljs-function .hljs-title { @apply text-yellow-300; }
+.highlight .hljs-attr { @apply text-blue-300; }

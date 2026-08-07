@@ -1,0 +1,13 @@
+<div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-5 shadow-sm">
+  <h3 class="text-base font-semibold text-gray-900 dark:text-white mb-4"><%= __('recent_posts') %></h3>
+  <ul class="space-y-3">
+    <% site.posts.sort('-date').limit(5).forEach(function(post) { %>
+      <li>
+        <a href="<%- url_for(post.path) %>" class="block text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+          <%= post.title %>
+        </a>
+        <time class="text-xs text-gray-400 dark:text-gray-500" datetime="<%= date_xml(post.date) %>"><%= date(post.date, 'MMM D, YYYY') %></time>
+      </li>
+    <% }); %>
+  </ul>
+</div>

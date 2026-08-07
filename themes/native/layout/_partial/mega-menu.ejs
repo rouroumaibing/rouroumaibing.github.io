@@ -1,0 +1,17 @@
+<div class="absolute left-0 top-full mt-2 w-80 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+  <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl shadow-lg p-2">
+    <% menu_item.children.forEach(function(child) { %>
+      <a href="<%- url_for(child.url) %>" class="flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"<% if (child.external) { %> target="_blank" rel="noopener noreferrer"<% } %>>
+        <% if (child.icon) { %>
+        <div class="flex-shrink-0 w-5 h-5 text-gray-400">
+          <%- partial('_partial/icons/' + child.icon, {}) %>
+        </div>
+        <% } %>
+        <div class="flex-1">
+          <span class="font-semibold text-sm text-gray-900 dark:text-white"><%= child.name %></span>
+          <span class="block text-xs text-gray-500 dark:text-gray-400"><%= child.desc %></span>
+        </div>
+      </a>
+    <% }); %>
+  </div>
+</div>

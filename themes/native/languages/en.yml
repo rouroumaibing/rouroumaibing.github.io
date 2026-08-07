@@ -1,0 +1,31 @@
+categories: Categories
+recent_posts: Recent Posts
+tags: Tags
+total_posts: "%s posts total"
+search_placeholder: Search articles...
+search_hint: Type to search
+search: Search
+search_no_results: No results found
+search_navigate: navigate
+search_open: open
+search_close: close
+prev: Prev
+next: Next
+home: Home
+blog: Blog
+archives: Archives
+category: Category
+tag: Tag
+table_of_contents: Table of Contents
+not_found_title: "404"
+not_found_desc: "The page you are looking for does not exist."
+back_home: Back to Home
+min_read: min read
+all_rights_reserved: All Rights Reserved.
+powered_by: Powered by
+announcement_text: "Welcome to my blog"
+announcement_link_text: "Read more →"
+footer_nav: Navigation
+footer_featured: Featured
+footer_about: About
+footer_contact: Contact

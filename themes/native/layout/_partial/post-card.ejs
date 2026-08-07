@@ -1,0 +1,16 @@
+<article class="py-6 first:pt-0 group">
+  <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 space-x-2 mb-2">
+    <time datetime="<%= date_xml(post.date) %>"><%= date(post.date, 'MMM D, YYYY') %></time>
+    <% var cat = post.categories && post.categories.length ? post.categories.first() : null; %>
+    <% if (cat) { %>
+      <span>•</span>
+      <a href="<%- url_for(cat.path) %>" class="text-blue-600 dark:text-blue-400 hover:underline font-medium"><%= cat.name %></a>
+    <% } %>
+  </div>
+  <h2 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+    <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+  </h2>
+  <% if (theme.blog.show_excerpt) { var excerpt = strip_html(post.excerpt || post.description || post.content || ''); var len = theme.blog.excerpt_length || 160; if (excerpt) { %>
+  <p class="mt-2 text-gray-600 dark:text-gray-300 line-clamp-2 text-sm leading-relaxed"><%= excerpt.substring(0, len) %>...</p>
+  <% } } %>
+</article>

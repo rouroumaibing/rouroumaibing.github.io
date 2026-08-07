@@ -37,6 +37,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Build theme CSS
+        run: cd themes/native && pnpm install --ignore-workspace && pnpm run build:css
+
       - name: Build
         run: pnpm build
 

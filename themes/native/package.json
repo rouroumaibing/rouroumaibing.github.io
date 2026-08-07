@@ -1,0 +1,14 @@
+{
+  "name": "hexo-theme-native",
+  "version": "1.0.0",
+  "scripts": {
+    "build:css": "tailwindcss -i ./source/css/input.css -o ./source/css/style.css --minify",
+    "watch:css": "tailwindcss -i ./source/css/input.css -o ./source/css/style.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4",
+    "autoprefixer": "^10.4",
+    "postcss": "^8.4",
+    "@tailwindcss/typography": "^0.5"
+  }
+}

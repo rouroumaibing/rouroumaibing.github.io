@@ -55,7 +55,7 @@ GitHub Pages 有两种类型：
 - 可见性：Public
 - **不要**勾选 "Add a README file"、"Add .gitignore"、"Choose a license"（保持空仓库）
 
-![github-page-setting](/images/20260806/hvggd-github-page-setting.png)
+![GitHub 仓库创建页面](/images/20260806/hvggd/github-page-setting.png)
 
 ## 4. 克隆仓库到本地
 
@@ -259,7 +259,7 @@ git push -u origin main
 2. 左侧菜单选择 **Pages**
 3. **Source** 下拉选择 **"GitHub Actions"**（而非 "Deploy from a branch"）
 
-![GitHub Pages 设置](/images/20260806/hvggd-github-page-source-setting.png)
+![GitHub Pages 设置](/images/20260806/hvggd/github-page-source-setting.png)
 
 ## 11. 验证部署
 
