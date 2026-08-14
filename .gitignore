@@ -9,3 +9,4 @@ _multiconfig.yml
 tmp/
 themes/*/test-site/
 themes/*/.git/
+.workbuddy
