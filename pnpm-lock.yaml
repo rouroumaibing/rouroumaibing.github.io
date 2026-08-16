@@ -21,8 +21,8 @@ importers:
         specifier: ^4.0.0
         version: 4.0.0
       hexo-generator-json-content:
-        specifier: 2.2.0
-        version: 2.2.0
+        specifier: 4.2.3
+        version: 4.2.3
       hexo-generator-searchdb:
         specifier: ^1.5.0
         version: 1.5.0(chokidar@3.6.0)
@@ -436,8 +436,8 @@ packages:
     resolution: {integrity: sha512-KeM7mOCKWINGFAk1E+CkjMMgqFIv8oaRbGxR7ipkQAp44o4aopkVftma4sdIplOq9WQEWfVYDUK5gEv9J3nzUg==}
     engines: {node: '>=18'}
 
-  hexo-generator-json-content@2.2.0:
-    resolution: {integrity: sha512-yqJS18jZUS6zN3FBtwssm3EpAqx66NFghba5meBfcwWeMAcfyDlukirVInKrcW0xpx8KpT6NZXzXjPuZ9VL1rg==}
+  hexo-generator-json-content@4.2.3:
+    resolution: {integrity: sha512-XGqCaTUr6+X8Ty/YvRi+0eh0DJgHcp+lgBhn+Sgyh6ev40P0cwamwJyaZroTdHt8GPoBwbSGVu0H/CdzEf0lFA==}
 
   hexo-generator-searchdb@1.5.0:
     resolution: {integrity: sha512-d0b5SueDxJimTFaHpPg430FQFx7DtMkmEIHo0UTOjXWRy+eDqNSp1CuS04P7fWzMnH2h+aQc6O9D2yY+3sdAUg==}
@@ -496,6 +496,10 @@ packages:
 
   highlight.js@11.11.1:
     resolution: {integrity: sha512-Xwwo44whKBVCYoliBQwaPvtd/2tYFkRQtXDWj1nackaV2JPXx3L0+Jvd8/qCJ2p+ML0/XVkJ2q+Mr+UVdpJK5w==}
+    engines: {node: '>=12.0.0'}
+
+  highlight.js@11.12.0:
+    resolution: {integrity: sha512-nbfWpyRMcMrPMmDwJB+dhX/eiaPKtc2RB+0QZskqJ3WjRA/FDS0e9hZrx8EC/lbEv8gXy98FcDbNa/dspAaJMg==}
     engines: {node: '>=12.0.0'}
 
   html-encoding-sniffer@4.0.0:
@@ -604,9 +608,9 @@ packages:
     resolution: {integrity: sha512-POQXvpdL69+CluYsillJ7SUhKvytYjW9vG/GKpnf+xP8UWgYEM/RaMzHHofbALDiKbbP1W8UEYmgGl39WkPZsg==}
     engines: {'0': node >= 0.2.0}
 
-  keyword-extractor@0.0.28:
-    resolution: {integrity: sha512-oi7dSPpYtW/3fE0vZiqQgZ8mW3F1V9K4+rBJ0FcVrdXBEQuhZ0zKj7sX74eqGASuepLHf9aYdeonyKHWhYpHQA==}
-    engines: {node: '>= 0.10.0'}
+  keyword-extractor@0.3.0:
+    resolution: {integrity: sha512-39YbwqCOqSXWpCZSrMyuSowtmxoeUsHj6/UIXtOMo6r6LU4dOqjeSz2Q6pXrn+sLnNAhRyW2Aq/Dy1sClKVc0Q==}
+    engines: {node: '>= 14'}
 
   less@4.8.1:
     resolution: {integrity: sha512-jQ3lRIo1aUtiWVYXZ7mk4+V4BjCGswF3IxTLJ+4RUta8ZiHh8lhkig2G8dya2eCcyR1dYUvzuV46EkJN8PSwww==}
@@ -1423,10 +1427,11 @@ snapshots:
     dependencies:
       hexo-pagination: 3.0.0
 
-  hexo-generator-json-content@2.2.0:
+  hexo-generator-json-content@4.2.3:
     dependencies:
       hexo-util: 4.0.0
-      keyword-extractor: 0.0.28
+      keyword-extractor: 0.3.0
+      moment: 2.30.1
 
   hexo-generator-searchdb@1.5.0(chokidar@3.6.0):
     dependencies:
@@ -1508,7 +1513,7 @@ snapshots:
       camel-case: 4.1.2
       cross-spawn: 7.0.6
       deepmerge: 4.3.1
-      highlight.js: 11.11.1
+      highlight.js: 11.12.0
       htmlparser2: 10.1.0
       prismjs: 1.30.0
       strip-indent: 3.0.0
@@ -1542,6 +1547,8 @@ snapshots:
       - chokidar
 
   highlight.js@11.11.1: {}
+
+  highlight.js@11.12.0: {}
 
   html-encoding-sniffer@4.0.0:
     dependencies:
@@ -1673,7 +1680,7 @@ snapshots:
 
   jsonparse@1.3.1: {}
 
-  keyword-extractor@0.0.28: {}
+  keyword-extractor@0.3.0: {}
 
   less@4.8.1:
     dependencies:
