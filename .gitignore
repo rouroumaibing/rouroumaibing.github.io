@@ -10,3 +10,4 @@ tmp/
 themes/*/test-site/
 themes/*/.git/
 .workbuddy
+source/opt-images/

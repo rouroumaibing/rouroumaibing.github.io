@@ -111,3 +111,12 @@ search:
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
+
+# Image optimization (hexo-image-opt)
+# 重要：插件源码读取的配置键是 hexo_image_opt（不是 README 上写的 image_opt），
+# 写在 image_opt 下会被整个忽略，务必用下面这个键名。
+hexo_image_opt:
+  enable: true
+  quality: 80
+  sizes: [400, 800, 1280, 1920]
+  skipExisting: true
