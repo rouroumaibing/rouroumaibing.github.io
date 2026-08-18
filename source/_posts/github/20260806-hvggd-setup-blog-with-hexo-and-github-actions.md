@@ -241,13 +241,18 @@ jobs:
 
 ## 9. 推送到 GitHub
 
-项目自带的 `.gitignore` 已忽略 `public/`、`node_modules/` 等无需提交的文件。直接提交并推送：
+项目自带的 `.gitignore` 已忽略 `public/`、`node_modules/` 等无需提交的文件。推送前建议先 `hexo clean` 清理本地构建缓存，再提交源码：
 
 ```bash
+# 清理 db.json 与 public/ 等构建缓存/产物
+hexo clean
+
 git add .
 git commit -m "初始化 Hexo 博客 + GitHub Actions 部署"
 git push -u origin main
 ```
+
+> **为什么推送前先 `hexo clean`？** `hexo clean` 会删除 `db.json`（Hexo 内部数据库缓存）和 `public/`（生成的静态站点）。这两个文件虽已被 `.gitignore` 忽略、不会进入版本库，但执行它能：① 清掉本地调试留下的旧构建产物，保持工作区干净；② 在遇到"改了配置/文章却不生效""旧页面残留"等缓存问题时，强制从零重建。GitHub Actions 会在云端完整重新构建，所以本地是否 clean 不影响线上结果，但养成推送前 clean 的习惯能少踩很多坑。
 
 推送后，GitHub Actions 会自动触发构建。
 
@@ -292,6 +297,7 @@ pnpm server
 确认效果后，推送即可自动部署：
 
 ```bash
+hexo clean   # 清理本地缓存；遇到页面显示异常时必做
 git add .
 git commit -m "发布新文章：我的第一篇文章"
 git push
