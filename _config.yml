@@ -94,6 +94,8 @@ exclude:
   - RULES.md
   - "templates/**"
 ignore:
+  - "**/opt-images"
+  - "**/opt-images/**"
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
@@ -118,5 +120,5 @@ deploy:
 hexo_image_opt:
   enable: true
   quality: 80
-  sizes: [400, 800, 1280, 1920]
+  sizes: [800, 1280]
   skipExisting: true

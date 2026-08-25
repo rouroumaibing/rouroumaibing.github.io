@@ -161,7 +161,7 @@ kubectl get svc node-exporter -n monitoring
 curl <node-exporter-svc>:9100/metrics
 ```
 
-![node-exporter /metrics 输出示例](/images/20260818/prometheus-operator-guide/node-exporter-metrics-output.png)
+![node-exporter /metrics 输出示例](/images/20260818/nwthc/node-exporter-metrics-output.png)
 
 ### 5.2 看配置
 
@@ -169,11 +169,11 @@ curl <node-exporter-svc>:9100/metrics
 
 一个典型的 `scrape_configs` 段落长这样：
 
-![Prometheus 配置中的 relabel_configs](/images/20260818/prometheus-operator-guide/prometheus-config-relabel.png)
+![Prometheus 配置中的 relabel_configs](/images/20260818/nwthc/prometheus-config-relabel.png)
 
 在 `relabel_configs` 里可以做指标过滤和标签处理。配置生效后，到 **Status → Targets** 页面就能看到各个服务的采集状态：
 
-![Prometheus Targets 页面](/images/20260818/prometheus-operator-guide/prometheus-targets-page.png)
+![Prometheus Targets 页面](/images/20260818/nwthc/prometheus-targets-page.png)
 
 ### 5.3 看查询
 
@@ -183,7 +183,7 @@ curl <node-exporter-svc>:9100/metrics
 node_filesystem_avail_bytes
 ```
 
-![Prometheus Graph 查询示例](/images/20260818/prometheus-operator-guide/prometheus-graph-query.png)
+![Prometheus Graph 查询示例](/images/20260818/nwthc/prometheus-graph-query.png)
 
 ## 六、实操案例
 

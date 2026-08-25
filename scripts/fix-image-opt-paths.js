@@ -26,6 +26,16 @@ hexo.extend.filter.register('after_render:html', function (str) {
     return str;
   }
 
+  // 0) 始终执行路径替换（generate / deploy / hexo server 都跑）。
+  //    注意：此前曾在 hexo server 下跳过本脚本，结果嵌套文章页
+  //    （如 /2026/08/25/cncf/gateway-api/xxx/）里的 <picture> 仍保留
+  //    「裸相对路径」opt-images/...，浏览器按当前页面 URL 解析成
+  //    /2026/08/25/cncf/gateway-api/opt-images/... 而 404。
+  //    真正的「hexo server 无限重生成循环」由 _config.yml 的
+  //    ignore: "**/opt-images/**" 负责（让 watcher 不再监听插件写入的
+  //    source/opt-images 目录），与本 HTML 字符串过滤器无关，因此本脚本
+  //    无需、也不应在 server 下跳过。
+
   // 1) 前置判断：是否存在「尚未修复」的裸相对路径 opt-images/
   //    前面不是 "/"（即非根相对）的，才算需要修。
   var needsFix = false;

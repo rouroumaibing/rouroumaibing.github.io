@@ -6,8 +6,10 @@
   "scripts": {
     "build": "hexo generate",
     "clean": "hexo clean",
+    "clean:deep": "hexo clean && rm -rf source/opt-images node_modules && pnpm install",
     "deploy": "hexo deploy",
-    "server": "hexo server"
+    "server": "hexo server",
+    "stop": "lsof -ti tcp:4000 2>/dev/null | while read -r pid; do ps -p \"$pid\" -o command= 2>/dev/null | grep -q hexo && kill \"$pid\" 2>/dev/null; done || true"
   },
   "hexo": {
     "version": "8.1.2"
