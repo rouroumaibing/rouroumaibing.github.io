@@ -8,6 +8,8 @@ Live site: <https://rouroumaibing.github.io>
 
 | Date       | Title                                                            | Link                                                                                              |
 | ---------- | --------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| 2026-10-26 | From NGINX Ingress to Envoy Gateway: A Kubernetes Ingress Migration in Practice | [View](https://rouroumaibing.github.io/2026/10/26/cncf/gateway-api/20261026-fl9q0-nginx-to-envoy-gateway/) |
+| 2026-10-15 | When AI Learns to "Look Up Notes on Demand": Understanding Agent Skills | [View](https://rouroumaibing.github.io/2026/10/15/ai/20261015-ksail-skill-kepu/)                  |
 | 2026-08-25 | GatewayAPI Technical Architecture (PPT Edition)                 | [View](https://rouroumaibing.github.io/2026/08/25/cncf/gateway-api/20260825-bmqxs-gateway-api/)   |
 | 2026-08-25 | envoy-gateway                                                   | [View](https://rouroumaibing.github.io/2026/08/25/cncf/gateway-api/20260825-rtzbn-envoy-gateway/) |
 | 2026-08-20 | nginx-gateway-fabric                                           | [View](https://rouroumaibing.github.io/2026/08/20/cncf/gateway-api/20260820-mvptk-nginx-gateway-fabric/) |
