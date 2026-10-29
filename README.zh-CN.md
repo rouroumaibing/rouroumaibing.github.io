@@ -8,6 +8,7 @@ rouroumaibing 的个人博客，基于 [Hexo](https://hexo.io/) 构建，通过 
 
 | 日期         | 文章标题                              | 链接                                                                                                |
 | ---------- | --------------------------------- | ------------------------------------------------------------------------------------------------- |
+| 2026-10-29 | AI写代码总卡在细节？根因是隐性知识，不是你描述得不够细 | [访问](https://rouroumaibing.github.io/2026/10/29/ai/20261029-zbenh-ai-automation-tacit-knowledge/) |
 | 2026-10-26 | 从 NGINX Ingress 到 Envoy Gateway：一次 Kubernetes 入口架构迁移实践梳理 | [访问](https://rouroumaibing.github.io/2026/10/26/cncf/gateway-api/20261026-fl9q0-nginx-to-envoy-gateway/) |
 | 2026-10-15 | 当 AI 学会"按需翻笔记"：一文读懂 Agent 的 Skill | [访问](https://rouroumaibing.github.io/2026/10/15/ai/20261015-ksail-skill-kepu/)                    |
 | 2026-08-25 | GatewayAPI 技术架构（PPT版）             | [访问](https://rouroumaibing.github.io/2026/08/25/cncf/gateway-api/20260825-bmqxs-gateway-api/)         |
