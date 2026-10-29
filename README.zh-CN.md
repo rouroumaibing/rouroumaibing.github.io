@@ -29,6 +29,15 @@ rouroumaibing 的个人博客，基于 [Hexo](https://hexo.io/) 构建，通过 
 | 2026-08-07 | 当创建一个 Service 后，Kubernetes 会发生什么？  | [访问](https://rouroumaibing.github.io/2026/08/07/cncf/kubernetes/20260807-zsfgh-create-service-after/)   |
 | 2026-08-06 | 使用 Hexo + GitHub Actions 搭建个人博客    | [访问](https://rouroumaibing.github.io/2026/08/06/github/20260806-hvggd-setup-blog-with-hexo-and-github-actions/) |
 
+## 写作规则
+
+新增文章前先看这几份文档。
+
+- [source/RULES.md](source/RULES.md) — 命名规范、Front Matter、分类与标签规则
+- [source/templates/CONCEPT-BASED-KNOWLEDGE.md](source/templates/CONCEPT-BASED-KNOWLEDGE.md) — 概念型文章模板
+- [source/templates/SOFT-KNOWLEDGE.md](source/templates/SOFT-KNOWLEDGE.md) — 软件与工具类文章模板
+- [source/templates/TECHNICAL-DOCUMENT-REQUIREMENTS.md](source/templates/TECHNICAL-DOCUMENT-REQUIREMENTS.md) — 方案与技术文档模板
+
 ## 本地运行
 
 ```bash
@@ -37,4 +46,4 @@ pnpm server       # 本地预览 http://localhost:4000
 pnpm build        # 生成静态文件
 ```
 
-> 图片优化由 `hexo-image-opt` 在构建（`pnpm build`）时处理；本地预览（`pnpm server`）已修复图片优化产物引发的无限重生成循环。写作与命名规范见 [source/RULES.md](source/RULES.md)。
+> 图片优化由 `hexo-image-opt` 在构建（`pnpm build`）时处理；本地预览（`pnpm server`）已修复图片优化产物引发的无限重生成循环。

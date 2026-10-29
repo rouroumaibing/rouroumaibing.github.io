@@ -29,6 +29,15 @@ Live site: <https://rouroumaibing.github.io>
 | 2026-08-07 | What Happens After Creating a Service?                        | [View](https://rouroumaibing.github.io/2026/08/07/cncf/kubernetes/20260807-zsfgh-create-service-after/) |
 | 2026-08-06 | Building a Personal Blog with Hexo + GitHub Actions           | [View](https://rouroumaibing.github.io/2026/08/06/github/20260806-hvggd-setup-blog-with-hexo-and-github-actions/) |
 
+## Writing Rules
+
+Read these before adding a post.
+
+- [source/RULES.md](source/RULES.md) — naming conventions, front matter, categories and tags
+- [source/templates/CONCEPT-BASED-KNOWLEDGE.md](source/templates/CONCEPT-BASED-KNOWLEDGE.md) — template for concept posts
+- [source/templates/SOFT-KNOWLEDGE.md](source/templates/SOFT-KNOWLEDGE.md) — template for software and tool posts
+- [source/templates/TECHNICAL-DOCUMENT-REQUIREMENTS.md](source/templates/TECHNICAL-DOCUMENT-REQUIREMENTS.md) — template for solution and technical docs
+
 ## Local Development
 
 ```bash
@@ -37,4 +46,4 @@ pnpm server       # local preview at http://localhost:4000
 pnpm build        # generate static files
 ```
 
-> Image optimization is handled by `hexo-image-opt` at build time (`pnpm build`); the local preview (`pnpm server`) had its infinite regeneration loop (triggered by the image-optimization output) fixed. Writing and naming conventions are documented in [source/RULES.md](source/RULES.md).
+> Image optimization is handled by `hexo-image-opt` at build time (`pnpm build`); the local preview (`pnpm server`) had its infinite regeneration loop (triggered by the image-optimization output) fixed.
