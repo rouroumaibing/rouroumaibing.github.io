@@ -8,6 +8,7 @@ rouroumaibing 的个人博客，基于 [Hexo](https://hexo.io/) 构建，通过 
 
 | 日期         | 文章标题                              | 链接                                                                                                |
 | ---------- | --------------------------------- | ------------------------------------------------------------------------------------------------- |
+| 2026-11-17 | 当 AI 写了 90% 的代码：Claude Code 团队的验证体系解读与通用 Agent 落地指南 | [访问](https://rouroumaibing.github.io/2026/11/17/ai/20261117-qhtbf-agent-verification-practice/) |
 | 2026-11-13 | Skill 还是 MCP？用「缺口类型」而不是「AI 能力」划清落地边界 | [访问](https://rouroumaibing.github.io/2026/11/13/ai/20261113-vkmsr-ai-skill-mcp-boundary/) |
 | 2026-10-29 | AI写代码总卡在细节？根因是隐性知识，不是你描述得不够细 | [访问](https://rouroumaibing.github.io/2026/10/29/ai/20261029-zbenh-ai-automation-tacit-knowledge/) |
 | 2026-10-26 | 从 NGINX Ingress 到 Envoy Gateway：一次 Kubernetes 入口架构迁移实践梳理 | [访问](https://rouroumaibing.github.io/2026/10/26/cncf/gateway-api/20261026-fl9q0-nginx-to-envoy-gateway/) |

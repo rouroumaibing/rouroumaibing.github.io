@@ -8,6 +8,7 @@ Live site: <https://rouroumaibing.github.io>
 
 | Date       | Title                                                            | Link                                                                                              |
 | ---------- | --------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| 2026-11-17 | When AI Writes 90% of the Code: The Claude Code Team's Verification System, and a Playbook for Any Coding Agent | [View](https://rouroumaibing.github.io/2026/11/17/ai/20261117-qhtbf-agent-verification-practice/) |
 | 2026-11-13 | Skill or MCP? Use "Gap Type"—Not "AI Capability"—to Draw the Deployment Boundary | [View](https://rouroumaibing.github.io/2026/11/13/ai/20261113-vkmsr-ai-skill-mcp-boundary/) |
 | 2026-10-29 | AI Writes Code and Always Hits the Details? The Root Cause Is Tacit Knowledge, Not That You Didn't Describe It Well Enough | [View](https://rouroumaibing.github.io/2026/10/29/ai/20261029-zbenh-ai-automation-tacit-knowledge/) |
 | 2026-10-26 | From NGINX Ingress to Envoy Gateway: A Kubernetes Ingress Migration in Practice | [View](https://rouroumaibing.github.io/2026/10/26/cncf/gateway-api/20261026-fl9q0-nginx-to-envoy-gateway/) |
